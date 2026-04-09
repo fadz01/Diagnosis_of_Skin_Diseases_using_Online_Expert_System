@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acne Diagnosis</title>
+  <link rel="stylesheet" href="Diagnosis.css" />
+  <style>
+    /* Additional styles for popup */
+    .popup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        max-width: 80%;
+        max-height: 80%;
+        overflow: auto;
+    }
+    
+    .popup.active {
+        display: block;
+    }
+    
+    .popup h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .popup p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .popup button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    
+    .popup button:hover {
+        background-color: #0056b3;
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 900;
+        display: none;
+    }
+    
+    .overlay.active {
+        display: block;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">DERMAI</div>
+        <div class="nav-items">
+            <a href="DermAI.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Contact.html">Contact</a>
+        </div>
+    </nav>
+    <h1>Acne Diagnosis Form:</h1>
+    <p>Please remember to answer all the questions.</p>
+
+    <section class="superhero">
+
+        <form id="diagnosisForm">
+            <div id="questionsContainer"></div>
+            <button type="button" onclick="diagnose()">Diagnose</button>
+         </form>
+  
+         <script src="Diagnosis.js"></script>
+
+    </section>
+  
+    <!-- Popup for diagnosis results -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2>Diagnosis Results</h2>
+        <div id="diagnosisResult"></div>
+        <div id="descriptionResult"></div>
+        <div id="treatmentResult"></div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+  
+</body>
+</html>

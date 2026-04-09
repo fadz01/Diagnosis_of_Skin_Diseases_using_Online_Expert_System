@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #7faacf;
+}
+
+nav {
+    height: 80px;
+    background: #7faacf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px) / 2);
+}
+
+.logo {
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #000;
+    padding: 0 1.5rem;
+}
+
+nav a:hover {
+    color: #fff;
+    font-weight: bold;
+}
+
+.sidekick-member {
+    text-align: center;
+    background: #7faacf;
+    font-size: 1.5rem;
+    color: #000;
+    text-decoration: none;
+    padding: 0 1.5rem;
+    margin-top: 5rem;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.team-member {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: calc(16.666% - 20px); /* Adjust width for six items per row */
+    flex: 1 1 calc(16.666% - 20px); /* Responsive layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* Reduced padding */
+    margin-bottom: 20px; /* Added margin between items */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.team-member:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+.team-member img {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    border: 2px solid #7faacf; /* Optional: Adds a border */
+    background: #fff;
+    object-fit: cover; /* Ensures the image covers the entire space */
+}
+
+.details {
+    padding: 20px;
+    background: #fff;
+}
+
+.details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.details p {
+    font-size: 0.9rem;
+    color: #333;
+    background: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+    .team-member {
+        max-width: calc(33.333% - 20px); /* Two items per row on smaller screens */
+        flex: 1 1 calc(33.333% - 20px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team-member {
+        max-width: calc(50% - 20px); /* Two items per row on even smaller screens */
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .team-member {
+        max-width: calc(100% - 20px); /* One item per row on smallest screens */
+        flex: 1 1 calc(100% - 20px);
+    }
+}
